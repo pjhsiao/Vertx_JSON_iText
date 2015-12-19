@@ -55,7 +55,7 @@ public class RespBankFormIText extends AbstractVerticle  {
 		bankcodesMap.put("1458","014589"); 
 		bankcodesMap.put("1402","014029");     
 		bankcodesMap.put("1448","014489"); 
-		bankcodesMap.put("1401","014019"); 
+		bankcodesMap.put("3401","134019"); 
 	}
 	
 	@Override
@@ -72,7 +72,7 @@ public class RespBankFormIText extends AbstractVerticle  {
 								 * handle json to Object 
 								 */
 								byte[] bytes = httpServerRequesr.getBytes();
-								String jsonContext = new String(bytes);
+								String jsonContext = new String(bytes,"UTF-8");
 								TwbankForm twbankForm= new Gson().fromJson(jsonContext.toString(),  TwbankForm.class);
 								
 								/**
