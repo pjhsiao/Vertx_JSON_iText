@@ -36,7 +36,7 @@ import io.vertx.core.http.HttpServer;
 public class RespBankFormIText extends AbstractVerticle  {
 	private final static Map<String,String> bankcodesMap;
 	private final static String fileName = "twbankform.pdf";
-	private final static String fontType= "kaiu.ttf";
+	private final static String fontType= "KAIU.TTF";
 	static{
 		bankcodesMap = new HashMap<String, String>();
 		bankcodesMap.put("1409","014099"); 
@@ -247,10 +247,8 @@ public class RespBankFormIText extends AbstractVerticle  {
 								request.response().end();
 								request.response().close();
 							
-								if(!document.isOpen()){
-									baos.close();
-									request.response().close();
-								}
+								baos.close();
+								request.response().close();
 							} catch (Exception e) {
 								e.printStackTrace();
 							}
